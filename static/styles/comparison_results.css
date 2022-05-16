@@ -1,0 +1,11 @@
+.changed{
+    background-color: mediumpurple;
+}
+
+.removed {
+    background-color: orangered;
+}
+
+.added {
+    background-color: lawngreen;
+}

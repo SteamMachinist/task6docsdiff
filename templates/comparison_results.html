@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/comparison_results.css') }}">
+    <title>Document differences</title>
+</head>
+<body>
+    <h1>Document differences</h1>
+    {% for difference in differences %}
+        {% if difference[0] == "*" or (difference[0] and difference[1]) == "-" %}
+            <br> {{ difference }} <br>
+        {% else %}
+            {% if difference[0] == "!" %}
+                <span class="changed">{{ difference }}</span>
+            {% elif difference[0] == "+" %}
+                <span class="added">{{ difference }}</span>
+            {% elif difference[0] == "-" %}
+                <span class="removed">{{ difference }}</span>
+            {% else %}
+                {{ difference }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

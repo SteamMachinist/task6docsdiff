@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document comparison</title>
+</head>
+<body>
+    <h1>Choose documents to compare</h1>
+    <p style="color: red"><strong>{{ error_message }}</strong></p>
+    <form method="POST" action="/" enctype="multipart/form-data">
+      <p><input type="file" name="doc1_file" accept=".docx,.odt"></p>
+      <p><input type="file" name="doc2_file" accept=".docx,.odt"></p>
+      <p><input type="submit" value="Compare"></p>
+    </form>
+</body>
+</html>
