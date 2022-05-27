@@ -27,7 +27,10 @@ def get_document_text(filename: str, extension: str) -> str:
     else:
         textdoc = load(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         allparas = textdoc.getElementsByType(text.P)
-        return teletype.extractText(allparas[0])
+        all_text = ""
+        for par in allparas:
+            all_text += teletype.extractText(par)
+        return allparas
 
 
 @app.route('/comparison_result')
